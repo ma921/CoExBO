@@ -6,7 +6,7 @@ from ._duel import DuelFeedback
 from ._gp_regressor import set_and_fit_rbf_model
 from ._gp_classifier import set_and_train_classifier, gp_sample
 from ._monte_carlo_quadrature import MonteCarloQuadrature
-from ._bayesian_quadrature import BayesianQuadrature
+#from ._bayesian_quadrature import BayesianQuadrature
 from ._dueling_acquisition_function import DuelingAcquisitionFunction, PiBODuelingAcquisitionFunction, BaselineDuelingAcquisitionFunction
 from ._human_interface import HumanFeedback
 
@@ -270,14 +270,18 @@ class XBOwithHuman(HumanFeedback):
             y_pairwise_unsure = torch.cat(y_pairwise_unsure)
         return y_pairwise.long(), y_pairwise_unsure.long()
         
-    def initial_sampling(self, n_init_obj, n_init_pref):
+    def initial_sampling(self, n_init_obj, n_init_pref, query_to_human=True):
         X = self.domain.sample(n_init_obj)
         Y = self.true_function(X.squeeze())
-        X_pairwise = self.duel.sample(n_init_pref)
-        y_pairwise, y_pairwise_unsure = self.query_to_human(X_pairwise, explanation=False)
-        X_pairwise, y_pairwise, y_pairwise_unsure = self.duel.data_augment(X_pairwise, y_pairwise, y_pairwise_unsure)
-        
         dataset_obj = (X, Y)
+        if query_to_human:
+            X_pairwise = self.duel.sample(n_init_pref)
+            y_pairwise, y_pairwise_unsure = self.query_to_human(X_pairwise, explanation=False)
+            X_pairwise, y_pairwise, y_pairwise_unsure = self.duel.data_augment(X_pairwise, y_pairwise, y_pairwise_unsure)
+        else:
+            self.duel.initialise_variance(dataset_obj)
+            X_pairwise, y_pairwise, y_pairwise_unsure = self.duel.sample_both(n_init_pref, sigma=self.sigma, in_loop=False)
+        
         dataset_duel = (X_pairwise, y_pairwise, y_pairwise_unsure)
         return dataset_obj, dataset_duel
     
