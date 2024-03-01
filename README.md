@@ -1,7 +1,6 @@
 # CoExBO
-Source code for the AISTATS 2024 paper:<br>
-"Looping in the Human: Collaborative and Explainable Bayesian Optimization"<br>
-The paper is here [arXiv](https://arxiv.org/abs/2310.17273)
+Source code for the AISTATS 2024 paper<br>
+"Looping in the Human: Collaborative and Explainable Bayesian Optimization" [arXiv](https://arxiv.org/abs/2310.17273)
 
 ## DEMO for practitioners/researchers
 We prepared an example of CoExBO with battery example. <br>
