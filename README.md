@@ -17,7 +17,7 @@ Collaborative and Explainable BO (CoExBO)<br>
 4. Human conducts experiments and repeat step 1.<br>
 
 # Explainability
-![plot](./docs/idea.png | width=100)<br>
+![plot](./docs/idea.png)<br>
 
 Utilising GP-SHAP, we can provide insights into the undergoing of the BO by attributing feature importance to the followings:
 - Surrogate GP model
