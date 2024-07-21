@@ -1,6 +1,6 @@
 # CoExBO
 Source code for the AISTATS 2024 paper<br>
-"Looping in the Human: Collaborative and Explainable Bayesian Optimization" [arXiv](https://arxiv.org/abs/2310.17273)
+"Looping in the Human: Collaborative and Explainable Bayesian Optimization" [paper](https://proceedings.mlr.press/v238/adachi24a.html)
 
 ## DEMO for practitioners/researchers
 We prepared an example of CoExBO with battery example. <br>
@@ -31,10 +31,12 @@ torch 1.13.0
 ## Cite as
 Please cite this work as
 ```
-@inproceedings{adachi2023looping,
+@inproceedings{adachi2024looping,
   title={Looping in the Human: Collaborative and Explainable Bayesian Optimization},
-  author={Adachi, Masaki and Planden, Brady and Howey, David A and Maundet, Krikamol and Osborne, Michael A and Chau, Siu Lun},
-  booktitle={Artificial intelligence and statistics},
-  year={2024}
+  author={Adachi, Masaki and Planden, Brady and Howey, David and Osborne, Michael A and Orbell, Sebastian and Ares, Natalia and Muandet, Krikamol and Chau, Siu Lun},
+  booktitle={International Conference on Artificial Intelligence and Statistics},
+  pages={505--513},
+  year={2024},
+  organization={PMLR}
 }
 ```
