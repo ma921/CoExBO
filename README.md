@@ -8,7 +8,11 @@ We prepared an example of CoExBO with battery example. <br>
 - Demo2 synthetic human response.ipynb
 
 ## CoExBO in a nutshell.
-![plot](./docs/concept.png)<br>
+<p align="center">
+  <img src="./docs/concept.png" width="60%">
+  <br />
+  <span>Fig. 1: In Collaborative and Explainable Bayesian Optimization (CoExBO), a human expert collaborates with BO to refine electrolyte materials. While experts excel in discerning material differences rather than identifying the best one, pairwise comparisons and explanations boost their feedback accuracy and trust. This guides the BO to produce better candidates, en- suring quicker convergence.</span>
+</p>
 
 Collaborative and Explainable BO (CoExBO)<br>
 1. BO combines experimental results and expert preferences.<br>
@@ -17,7 +21,11 @@ Collaborative and Explainable BO (CoExBO)<br>
 4. Human conducts experiments and repeat step 1.<br>
 
 # Explainability
-![plot](./docs/idea.png)<br>
+<p align="center">
+  <img src="./docs/idea.png" width="60%">
+  <br />
+  <span>Fig. 2: Figure 2: Explanation flow: Spatial relation: BO visualizes the surrogate model’s predictive distribution and estimated human preference models for the two primary dimensions determined by Shapley values. Feature importance: Users’ values are provided for both candidates’ predictive mean, standard deviation, and acquisition function. Selection accuracy feed- back: After observing the function value, a post-hoc evaluation of the correct selection probability is given.</span>
+</p>
 
 Utilising GP-SHAP, we can provide insights into the undergoing of the BO by attributing feature importance to the followings:
 - Surrogate GP model
